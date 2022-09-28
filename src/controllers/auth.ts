@@ -11,7 +11,7 @@ const loginCtrl = async ({ body }: Request, res: Response) => {
   const user = await loginUser({ email, password })
   if (user === 'USER_NOT_FOUND') return res.status(404).send(user);
   if (user === 'PASSWORD_INCORRECT') return res.status(403).send(user);
-  res.send({user})
+  res.send(user)
 }
 
 export { registerCtrl, loginCtrl }
